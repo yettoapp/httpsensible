@@ -13,7 +13,7 @@ jobs:
     uses: yettoapp/actions/.github/workflows/ruby_gem_release.yml@main
     secrets:
       rubygems_api_key: ${{ secrets.SISYPHUS_RUBYGEMS_API_KEY }}
-      gh_token: ${{ secrets.SISYPHUS_PUSH_TO_PROTECTED_BRANCH }}
+      gh_token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
     with:
       gem_name: httpsensible
       version_filepath: lib/httpsensible/version.rb
