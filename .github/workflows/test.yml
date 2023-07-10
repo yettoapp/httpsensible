@@ -1,10 +1,8 @@
-name: CI
+name: Test
 
 on:
-  pull_request:
-
-permissions:
-  contents: read
+  workflow_dispatch:
+  pull_request_target:
 
 jobs:
   test:
@@ -12,11 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set up Ruby
-        uses: yettoapp/actions/setup-languages@main
         with:
-          ruby: true
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
 
-      - name: Run tests
-        run: bundle exec rake test
+      - uses: yettoapp/actions/run-ruby-tests@main
+        with:
+          github_token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
