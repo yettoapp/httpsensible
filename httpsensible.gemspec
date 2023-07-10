@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency("minitest", "~> 5.6")
   spec.add_development_dependency("minitest-focus", "~> 1.1")
+  spec.add_development_dependency("webmock", "~> 3.8")
 end

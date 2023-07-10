@@ -16,7 +16,7 @@ module Httpsensible
         when HTTPX::Response
           "#{@response.status}, #{@response.headers}, #{@response.body}"
         when HTTPX::ErrorResponse
-          "#{@response.status}, #{@response.error}"
+          @response.error.message
         else
           ""
         end
@@ -36,11 +36,11 @@ module Httpsensible
       # sig { params(response: T.any(HTTPX::Response, HTTPX::ErrorResponse)).returns(T::Boolean) }
       def unavailable?
         return true if @response.nil?
-        return true unless (200..299).cover?(@response.status)
+        return false if (200..299).cover?(@response.status)
 
         case @response
         when HTTPX::Response
-          @response.body.blank? || @response.body == "{}"
+          raw_body.nil? || raw_body.empty? || raw_body == "{}"
         when HTTPX::ErrorResponse
           true
         end
