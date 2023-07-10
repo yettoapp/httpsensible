@@ -22,7 +22,8 @@ class TestHttpsensibleResponse < Minitest::Test
   end
 
   def test_that_it_knows_availability
-    http_response = HTTPX::Response.new(@request, 200, "2.0", {})
+    http_response = HTTPX::Response.new(@request, 200, "2.0", { "x-with-body" => "true" })
+    http_response << "OK"
     response = Httpsensible::Client::Response.new(http_response)
 
     assert_predicate(response, :available?)
