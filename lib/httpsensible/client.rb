@@ -23,6 +23,18 @@ module Httpsensible
         .with_headers(headers)
     end
 
+    # TODO: test this
+    def with_plugin(plugin)
+      @client = @client.plugin(plugin)
+      self
+    end
+
+    # TODO: test this
+    def with_authentication(authentication)
+      @client = @client.authentication(authentication)
+      self
+    end
+
     def with_headers(headers)
       @client = @client.with(headers: headers)
       self
