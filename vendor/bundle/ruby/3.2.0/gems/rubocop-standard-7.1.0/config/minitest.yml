@@ -1,5 +1,0 @@
-require:
-  - rubocop-minitest
-
-Minitest/MultipleAssertions:
-  Enabled: false
