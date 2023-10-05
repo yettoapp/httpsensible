@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency("httpx", "~> 0.24")
+  spec.add_dependency("httpx", ">= 0.24", "< 2.0")
   spec.add_dependency("jwt", "~> 2.7")
 
   spec.add_development_dependency("minitest", "~> 5.6")
