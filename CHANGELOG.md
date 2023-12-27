@@ -1,3 +1,12 @@
+## [v0.2.1] - 27-12-2023
+## What's Changed
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/yettoapp/httpsensible/pull/3
+* Bump the bundler-dependencies group with 1 update by @dependabot in https://github.com/yettoapp/httpsensible/pull/5
+
+## New Contributors
+* @dependabot made their first contribution in https://github.com/yettoapp/httpsensible/pull/3
+
+**Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.2.0...v0.2.1
 ## [v0.2.0] - 10-07-2023
 null
 ## [v0.1.2] - 10-07-2023
