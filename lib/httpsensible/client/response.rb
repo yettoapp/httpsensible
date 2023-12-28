@@ -36,14 +36,10 @@ module Httpsensible
       # sig { params(response: T.any(HTTPX::Response, HTTPX::ErrorResponse)).returns(T::Boolean) }
       def unavailable?
         return true if @response.nil?
+        return true if @response.is_a?(HTTPX::ErrorResponse)
         return false if (200..299).cover?(@response.status)
 
-        case @response
-        when HTTPX::Response
-          raw_body.nil? || raw_body.empty? || raw_body == "{}"
-        when HTTPX::ErrorResponse
-          true
-        end
+        true if (400..599).cover?(@response.status)
       end
 
       def available?
