@@ -1,3 +1,5 @@
+## [v0.2.2] - 28-12-2023
+**Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.2.1...v0.2.2
 ## [v0.2.1] - 27-12-2023
 ## What's Changed
 * Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/yettoapp/httpsensible/pull/3
