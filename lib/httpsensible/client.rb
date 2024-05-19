@@ -35,6 +35,18 @@ module Httpsensible
       self
     end
 
+    # TODO: test this
+    def with(options, &blk)
+      @client = @client.with(options, &blk)
+      self
+    end
+
+    # TODO: test this
+    def request(*args, **options)
+      @client = @client.request(*args, *options)
+      self
+    end
+
     def with_headers(headers)
       @client = @client.with(headers: headers)
       self
