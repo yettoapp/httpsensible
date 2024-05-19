@@ -1,3 +1,9 @@
+# [v0.3.0] - 19-05-2024
+## What's Changed
+* support  and  client methods along by @gjtorikian in https://github.com/yettoapp/httpsensible/pull/7
+
+
+**Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.2.2...v0.3.0
 ## [v0.2.2] - 28-12-2023
 **Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.2.1...v0.2.2
 ## [v0.2.1] - 27-12-2023
