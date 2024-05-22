@@ -35,6 +35,11 @@ module Httpsensible
       self
     end
 
+    def with_headers(headers)
+      @client = @client.with(headers: headers)
+      self
+    end
+
     # TODO: test this
     def with(options, &blk)
       @client = @client.with(options, &blk)
@@ -43,13 +48,12 @@ module Httpsensible
 
     # TODO: test this
     def request(*args, **options)
-      @client = @client.request(*args, *options)
-      self
-    end
-
-    def with_headers(headers)
-      @client = @client.with(headers: headers)
-      self
+      responses = @client.request(*args, *options)
+      @last_response = if responses.is_a?(Array)
+        responses.map { |response| Httpsensible::Client::Response.new(response) }
+      else
+        Httpsensible::Client::Response.new(responses)
+      end
     end
 
     ["head", "get", "post", "put", "delete", "trace", "options", "connect", "patch"].each do |meth|
