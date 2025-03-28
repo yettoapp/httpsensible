@@ -1,19 +1,19 @@
-name: Sorbet
+# name: Sorbet
 
-on:
-  pull_request_target:
-    paths:
-      - "**/*.rb"
-      - "Gemfile.lock"
+# on:
+#   pull_request_target:
+#     paths:
+#       - "**/*.rb"
+#       - "Gemfile.lock"
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+# jobs:
+#   update:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           ref: ${{ github.head_ref }}
+#           token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
 
-      - uses: yettoapp/actions/run-sorbet-update@main
+#       - uses: yettoapp/actions/run-sorbet-update@main

@@ -1,23 +1,15 @@
-name: Linting
+name: Lint
 
 on:
   pull_request:
-    paths:
-      - "**/*.rb"
 
-permissions:
-  contents: read
+env:
+  RAILS_ENV: test
 
 jobs:
-  rubocop:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: yettoapp/actions/setup-languages@main
-        with:
-          ruby: true
-
-      - name: Rubocop
-        run: bundle exec rake rubocop
+  verify:
+    uses: yettoapp/actions/.github/workflows/lint.yml@main
+    secrets:
+      gh_token: ${{ secrets.GH_SISYPHUS_YETTO_REPO_TOKEN }}
+    with:
+      ruby: true
