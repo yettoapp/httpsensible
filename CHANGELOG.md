@@ -1,3 +1,9 @@
+# [v0.3.2] - 28-03-2025
+## What's Changed
+* default to empty string by @gjtorikian in https://github.com/yettoapp/httpsensible/pull/10
+
+
+**Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.3.1...v0.3.2
 # [v0.3.1] - 22-05-2024
 **Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.3.0...v0.3.1
 # [v0.3.0] - 19-05-2024
