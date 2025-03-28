@@ -24,7 +24,7 @@ module Httpsensible
 
       # sig { params(response: T.any(HTTPX::Response, HTTPX::ErrorResponse)).returns(T::Boolean) }
       def parsed_json_body
-        JSON.parse(raw_body)
+        JSON.parse(raw_body || "")
       rescue JSON::ParserError
         {}
       end
