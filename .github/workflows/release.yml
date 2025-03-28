@@ -20,6 +20,5 @@ jobs:
     with:
       gem_name: httpsensible
       version_filepath: lib/httpsensible/version.rb
-      requires_node: true
       prepare: ${{ github.event_name == 'push' }}
       release: ${{ github.event_name == 'workflow_dispatch' || ((github.event.pull_request.merged == true) && (contains(github.event.pull_request.labels.*.name, 'release'))) }}
