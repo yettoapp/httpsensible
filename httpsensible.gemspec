@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency("httpx", ">= 0.24", "< 2.0")
-  spec.add_dependency("jwt", "~> 2.7")
+  spec.add_dependency("jwt", ">= 2.7", "< 4.0")
 
   spec.add_development_dependency("minitest", "~> 5.6")
   spec.add_development_dependency("minitest-focus", "~> 1.1")
