@@ -4,7 +4,7 @@ require "test_helper"
 
 class TestHttpsensibleResponse < Minitest::Test
   def setup
-    @request = HTTPX::Request.new("GET", "https://yetto.app")
+    @request = HTTPX::Request.new("GET", "https://yetto.app", HTTPX::Options.new)
   end
 
   def test_that_it_can_to_s_response
@@ -15,7 +15,7 @@ class TestHttpsensibleResponse < Minitest::Test
   end
 
   def test_that_it_can_to_s_error_response
-    http_response = HTTPX::ErrorResponse.new(@request, RuntimeError.new("oh dear"), {})
+    http_response = HTTPX::ErrorResponse.new(@request, RuntimeError.new("oh dear"))
     response = Httpsensible::Client::Response.new(http_response)
 
     assert_equal("oh dear", response.to_s)
