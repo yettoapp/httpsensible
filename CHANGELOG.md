@@ -1,3 +1,9 @@
+# [v0.4.0] - 10-07-2025
+## What's Changed
+* Update jwt requirement from ~> 2.7 to >= 2.7, < 4.0 in the bundler-dependencies group by @dependabot in https://github.com/yettoapp/httpsensible/pull/12
+
+
+**Full Changelog**: https://github.com/yettoapp/httpsensible/compare/v0.3.2...v0.4.0
 # [v0.3.2] - 28-03-2025
 ## What's Changed
 * default to empty string by @gjtorikian in https://github.com/yettoapp/httpsensible/pull/10
